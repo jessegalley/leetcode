@@ -12,9 +12,9 @@ import (
 func TestProblem(t *testing.T) {
 
   testCases := []struct {
-    name string 
-    nums []int
-    want int
+    name  string 
+    input []int
+    want  int
   } {
     {
       "test1",
@@ -31,11 +31,11 @@ func TestProblem(t *testing.T) {
 
   for _, tc := range testCases {
     t.Run(tc.name, func(t *testing.T) {
-      got := solve(tc.nums)
+      got := solve(tc.input)
       ok := reflect.DeepEqual(got, tc.want)
       if !ok {
         t.Errorf("solve(%v) = %v; want = %v\n",
-        tc.nums, got, tc.want)
+        tc.input, got, tc.want)
       }
     })
   }
